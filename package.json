@@ -1,0 +1,22 @@
+{
+  "name": "avenidamas",
+  "version": "1.0.0",
+  "description": "app avenida",
+  "main": "index.js",
+  "scripts": {
+    "front": "cd ./frontend && npm start",
+    "back": "nodemon",
+    "all": "concurrently \"npm run front\" \"npm run back\"",
+    "install-front": "npm install --prefix frontend",
+    "install-back": "npm install --prefix backend",
+    "build-front": "cd ./frontend && npm run build",
+    "build-back": "cd ./backend && npm run build",
+    "build": "concurrently \"npm run build-front\" \"npm run build-back\""
+  },
+  "author": "mauro bonnet",
+  "license": "ISC",
+  "dependencies": {
+    "react-credit-cards": "^0.8.3",
+    "uuid": "^9.0.1"
+  }
+}

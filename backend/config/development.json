@@ -1,0 +1,19 @@
+{
+    "server": {
+        "port": 3001
+    },
+    "db": {
+        "url": "mongodb://bridge:nosotros@localhost:27017/avenidamas?authSource=admin"
+    },
+    "integrations": {
+        "payway": {
+            "server": {"url": "https://developers-ventasonline.payway.com.ar"},
+            "pathPayment": "api/v2/payments",
+            "credentials": {
+                "path": "api/v2/tokens",
+                "apiKeyToken": "e9cdb99fff374b5f91da4480c8dca741",
+                "apiKeyPayments": "92b71cf711ca41f78362a7134f87ff65"
+            }
+        }
+    }
+}
