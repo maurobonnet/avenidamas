@@ -19,8 +19,10 @@ export const PaymentFormLeft = () => {
     <>
         <div className="col s8 card grey lighten-5">
         <div className='row'>
-            <h5>¿Cómo quieres pagar?</h5>
-            <p>Ingresa los datos de tu tarjeta</p>
+            <div className='container'>
+                <h5>¿Cómo quieres pagar?</h5>
+                <p>Ingresa los datos de tu tarjeta</p>
+            </div>
             <div className='col s6'>
             <div className="row">
                 <Input colSize={12} label="Número de tarjeta" id="numberInCard" onChange={changeHandler} onFocus={inputFocusHandler} onBlur={() => validateFields(data)} name='number' type="text" className="validate" />
@@ -57,21 +59,21 @@ export const PaymentFormRight = () => {
     const { data, setData } = useContext(Store);
     const onSubmitHandler = async (event) => {
         event.preventDefault();
-        console.log("send");
         const res = await axios.post("/add", {
             number: data.number,
             name: data.name,
             expiry: data.expiry,
             cvc: data.cvc,
             dni: data.dni,
-            amount: 150700
+            amount: 5000
         });
-        console.log(res);
-        if(!res) M.toast({html: 'Hubo un error, intenta de nuevo', classes: 'red'});
-        if(res.data.status === "approved"){
+        const {result} = res.data;
+        if(!result) M.toast({html: 'Hubo un error, intenta de nuevo', classes: 'red'});
+        if(result.status === "approved"){
             M.toast({html: 'Gracias por tu compra', classes: 'green'});
+            setTimeout(() => {window.location.pathname = "/payments"}, 3000);
         }else{
-            M.toast({html: 'Hubo un error, intenta de nuevo', classes: 'red'});
+            M.toast({html: res.data.message, classes: 'red'});
         }
     };
     return (
@@ -151,7 +153,6 @@ export const PaymentForm = () => {
 }
 
 const validateFields = (data) => {
-    console.log("exec: ", data);
     const regex = /^(0[1-9]|1[0-2])\/\d{2}$/;
     const fields = {
         number: () => data.number.length < 16 || data.number.length > 16 ? M.toast({html: 'El numero de tarjeta es invalido', classes: 'red'}) : null,

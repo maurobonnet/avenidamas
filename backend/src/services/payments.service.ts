@@ -27,7 +27,7 @@ export class PaymentsService {
               };
             const token = await payway.getToken(requestToken);
             const requestPayment: iRequestSendPayment = {
-                site_transaction_id: uuidv4(),
+                site_transaction_id: Math.random().toString(36).slice(2),
                 token: token.id,
                 payment_method_id: 1,
                 bin: token.bin,

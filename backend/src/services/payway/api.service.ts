@@ -32,6 +32,7 @@ export class PaywayService{
         try {
             logger.debug(`PaywayService => SENDING PAYMENT`);
             const headers = {
+                "Accept": "application/json",
                 "Content-Type": "application/json",
                 "apiKey": config.get<string>("integrations").payway.credentials.apiKeyPayments
             };

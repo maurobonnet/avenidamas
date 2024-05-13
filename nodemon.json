@@ -1,6 +1,6 @@
 {
     "watch": [ "backend" ],
     "ext": "ts",
-    "exec": "cd ./backend && npm run dev"
+    "exec": "npm run dev --prefix backend"
   }
   

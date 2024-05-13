@@ -1,20 +1,19 @@
 import "materialize-css/dist/css/materialize.min.css";
-import { PaymentForm } from "./components/PaymentForm";
 import { useEffect } from "react";
-import { Nav } from "./components/Nav";
+import { Main } from "./components/Main";
+import { MyShopping } from "./components/MyShopping";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  useEffect(() => {
-    document.querySelector("body").style.backgroundColor = "#c5cae9";
-  }, []);
+
   return (
     <>
-      <div className="App">
-        <Nav />
-        <div>
-          <PaymentForm />
-        </div>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/payments" element={<MyShopping />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
