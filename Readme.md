@@ -9,8 +9,7 @@ Este proyecto es una aplicación Node.js escrita en TypeScript que proporciona t
 ## Instalación
 
 1. Clona este repositorio.
-2. Para instalar las dependencias del directorio principal "npm install", para instalar la libreria concurrently que sirve para correr varios procesos a la vez.
-3. para instalar las dependencias de frontend ejecutar "npm run install-front" y para el backend "npm run install-back" .
+2. Para instalar las dependencias de frontend y el backend ejecutar en terminal el comando "npm run installer".
 4. para levantar el proyecto ejecutar "npm run all".
 
 
