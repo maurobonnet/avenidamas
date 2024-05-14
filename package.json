@@ -9,6 +9,7 @@
     "all": "concurrently \"npm run front\" \"npm run back\"",
     "install-front": "npm install --prefix frontend",
     "install-back": "npm install --prefix backend",
+    "installer": "npm i && npm run install-front && npm run install-back",
     "build-front": "cd ./frontend && npm run build",
     "build-back": "cd ./backend && npm run build",
     "build": "concurrently \"npm run build-front\" \"npm run build-back\""
