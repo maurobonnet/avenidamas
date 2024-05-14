@@ -4,7 +4,7 @@ import logger from "./utils/logger";
 const DB = async (): Promise<void> => {
     try {
         logger.debug("Connecting to database...");
-        const url: string = config.get<string>("db").url;
+        const url: string = config.get<string>("db.url");
         await mongoose.connect(url);
         logger.info("Connected to database");
     } catch (error) {

@@ -12,9 +12,9 @@ export class PaywayService{
             logger.debug(`PaywayService => GETTING TOKEN`);
             const headers = {
                 "Content-Type": "application/json",
-                "apiKey": config.get<string>("integrations").payway.credentials.apiKeyToken
+                "apiKey": config.get<string>("integrations.payway.credentials.apiKeyToken")
             };
-            const url = `${config.get("integrations").payway.server.url}/${config.get("integrations").payway.credentials.path}`
+            const url = `${config.get("integrations.payway.server.url")}/${config.get("integrations.payway.credentials.path")}`
             const result = await axios.post(url,
             param,
             {headers});
@@ -34,9 +34,9 @@ export class PaywayService{
             const headers = {
                 "Accept": "application/json",
                 "Content-Type": "application/json",
-                "apiKey": config.get<string>("integrations").payway.credentials.apiKeyPayments
+                "apiKey": config.get<string>("integrations.payway.credentials.apiKeyPayments")
             };
-            const result = await axios.post(`${config.get("integrations").payway.server.url}/${config.get("integrations").payway.pathPayment}`,
+            const result = await axios.post(`${config.get("integrations.payway.server.url")}/${config.get("integrations.payway.pathPayment")}`,
             param,
             {headers});
             logger.info(`PaywayService => PAYMENT => ${JSON.stringify(result.data)}`);

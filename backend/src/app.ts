@@ -9,7 +9,7 @@ class App{
     constructor() {
         logger.debug("Starting server...");
         this.app = express();
-        this.port = config.get<number>('server').port;
+        this.port = config.get<number>('server.port');
         this.app.use(express.json());
         this.setRoutes();
         this.connectDB();

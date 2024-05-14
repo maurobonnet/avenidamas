@@ -1,5 +1,4 @@
 import "materialize-css/dist/css/materialize.min.css";
-import { useEffect } from "react";
 import { Main } from "./components/Main";
 import { MyShopping } from "./components/MyShopping";
 import { BrowserRouter, Routes, Route } from "react-router-dom";

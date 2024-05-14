@@ -5,14 +5,17 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node ./src/index.ts",
-    "test": "jest",
+    "test": "set NODE_OPTIONS=--experimental-vm-modules && npx jest",
     "build": "tsc"
   },
   "author": "Mauro Bonnet",
   "license": "ISC",
   "dependencies": {
+    "@types/config": "^3.3.4",
     "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
     "@types/mongoose": "^5.11.97",
+    "@types/supertest": "^6.0.2",
     "avenidamas": "file:..",
     "axios": "^1.6.8",
     "config": "^3.3.11",
@@ -21,13 +24,17 @@
     "mongoose": "^8.3.3",
     "nodemon": "^3.1.0",
     "supertest": "^7.0.0",
+    "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5",
     "winston": "^3.13.0",
     "winston-daily-rotate-file": "^5.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.24.5",
+    "@babel/preset-env": "^7.24.5",
     "@babel/preset-typescript": "^7.24.1",
-    "@jest/globals": "^29.7.0"
+    "@jest/globals": "^29.7.0",
+    "babel-jest": "^29.7.0"
   }
 }

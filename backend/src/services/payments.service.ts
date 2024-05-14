@@ -1,10 +1,8 @@
 import { iPayment, iRequestGetToken, iRequestSendPayment, iResponseWithToken } from "../@types/Payments";
 import {Payments} from "../models/Payments";
 import { Response, Request } from "express";
-import config from "config";
 import logger from "../utils/logger";
 import { PaywayService } from "./payway/api.service";
-import { v4 as uuidv4 } from "uuid";
 export class PaymentsService {
     async add(req: Request, res: Response): Promise<void> {
         try {
